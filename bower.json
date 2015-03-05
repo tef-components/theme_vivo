@@ -1,0 +1,28 @@
+{
+  "name": "theme-movistar",
+  "version": "0.1.1",
+  "homepage": "https://github.com/tef-components/theme-movistar",
+  "authors": [
+    "the TEF components team"
+  ],
+  "description": "TEF components - theme-movistar",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "bower.json",
+    ".gitignore",
+    "README.md",
+    "Gruntfile.js",
+    "package.json",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "icons": "tef-components/icons",
+    "buttons": "tef-components/buttons",
+    "button-groups": "tef-components/button-groups",
+    "inputs": "tef-components/inputs",
+    "dropdowns": "tef-components/dropdowns",
+    "grid": "tef-components/grid"
+  }
+}

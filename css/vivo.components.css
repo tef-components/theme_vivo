@@ -997,7 +997,7 @@ button::-moz-focus-inner {
   min-width: 35px;
   max-width: 200px;
   background-image: none;
-  background-color: #2280a6;
+  background-color: #0066cc;
   color: white;
   font-size: 15px;
   line-height: normal;
@@ -1019,88 +1019,102 @@ button::-moz-focus-inner {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.tef-button:hover,
-.tef-button:focus {
+.tef-button::hover,
+.tef-button::focus {
   color: #fff;
-  background-color: #267a9c;
+  background-color: #0763bf;
   outline: none;
 }
-.tef-button:active,
+.tef-button::active,
 .tef-button.active {
   color: #fff;
-  background-color: #398daf;
+  background-color: #1a76d1;
 }
-.tef-button [data-icon]:before {
+.tef-button [data-icon]::before,
+.tef-button ::content [data-icon]::before {
   position: relative;
   font-size: 24px;
   line-height: 0;
   top: 5px;
 }
 .tef-button [data-icon] + span,
-.tef-button span + [data-icon] {
+.tef-button ::content [data-icon] + span,
+.tef-button span + [data-icon],
+.tef-button ::content span + [data-icon] {
   margin-left: 6px;
+}
+.tef-button span,
+.tef-button ::content span {
+  font-size: 15px;
 }
 .tef-button.small {
   font-size: 11px;
   padding: 8px;
 }
-.tef-button.small [data-icon]:before {
+.tef-button.small [data-icon]::before,
+.tef-button.small ::content [data-icon]::before {
   font-size: 20px;
+}
+.tef-button.small span,
+.tef-button.small ::content span {
+  font-size: 11px;
 }
 .tef-button.large {
   font-size: 24px;
   padding: 8px 15px;
 }
-.tef-button.large [data-icon]:before {
+.tef-button.large [data-icon]::before,
+.tef-button.large ::content [data-icon]::before {
   font-size: 32px;
 }
+.tef-button.large span,
+.tef-button.large ::content span {
+  font-size: 24px;
+}
 .tef-button.positive {
-  background-color: #8cc238;
+  background-color: #99cc33;
 }
-.tef-button.positive:hover,
-.tef-button.positive:focus {
-  background-color: #85b63a;
+.tef-button.positive::hover,
+.tef-button.positive::focus {
+  background-color: #91bf35;
 }
-.tef-button.positive:active {
-  background-color: #98c84c;
+.tef-button.positive::active {
+  background-color: #a3d148;
 }
 .tef-button.negative {
-  background-color: #c60606;
+  background-color: #b00000;
 }
-.tef-button.negative:hover,
-.tef-button.negative:focus {
-  background-color: #b90d0d;
+.tef-button.negative::hover,
+.tef-button.negative::focus {
+  background-color: #a50707;
 }
-.tef-button.negative:active {
-  background-color: #cc1f1f;
+.tef-button.negative::active {
+  background-color: #b81a1a;
 }
 .tef-button.subdued {
-  background-color: #75777b;
+  background-color: #999999;
 }
-.tef-button.subdued:hover,
-.tef-button.subdued:focus {
-  background-color: #707276;
+.tef-button.subdued::hover,
+.tef-button.subdued::focus {
+  background-color: #919191;
 }
-.tef-button.subdued:active {
-  background-color: #838588;
+.tef-button.subdued::active {
+  background-color: #a3a3a3;
 }
 .tef-button.significant {
-  background-color: #00c6d6;
+  background-color: #ff9900;
 }
-.tef-button.significant:hover,
-.tef-button.significant:focus {
-  background-color: #07b9c8;
+.tef-button.significant::hover,
+.tef-button.significant::focus {
+  background-color: #ec9107;
 }
-.tef-button.significant:active {
-  background-color: #1accda;
+.tef-button.significant::active {
+  background-color: #ffa31a;
 }
 .tef-button[disabled],
 .tef-button.disabled {
   opacity: 0.4;
   pointer-events: none;
-}
-.tef-button ~ .tef-button {
-  margin-left: 6px;
 }
 .tef-button-group {
   display: inline-block;
@@ -1220,7 +1234,7 @@ label {
 .tef-input:focus,
 .tef-input:active {
   padding: 6px 8px;
-  border: 2px solid #00c6d6;
+  border: 2px solid #ff9900;
   outline: none;
 }
 .tef-input-icon {
@@ -1279,19 +1293,19 @@ label {
 }
 .tef-positive input {
   padding: 4px 8px;
-  border: 2px solid #8cc238;
+  border: 2px solid #99cc33;
 }
 .tef-positive .tef-message {
-  background-color: #8cc238;
+  background-color: #99cc33;
 }
 .tef-warning input,
 .tef-negative input {
   padding: 4px 8px;
-  border: 2px solid #c60606;
+  border: 2px solid #b00000;
 }
 .tef-warning .tef-message,
 .tef-negative .tef-message {
-  background-color: #c60606;
+  background-color: #b00000;
 }
 .tef-row,
 .tef-group {
@@ -1386,7 +1400,7 @@ label {
 .tef-dropdown select:focus,
 .tef-dropdown select:active {
   padding: 6px 39px 6px 8px;
-  border: 2px solid #00c6d6;
+  border: 2px solid #ff9900;
   outline: none;
 }
 .tef-dropdown select:-moz-focusring {

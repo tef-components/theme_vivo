@@ -1,11 +1,11 @@
 {
-  "name": "theme-movistar",
-  "version": "0.1.1",
-  "homepage": "https://github.com/tef-components/theme-movistar",
+  "name": "theme-vivo",
+  "version": "0.2.1",
+  "homepage": "https://github.com/tef-components/theme-vivo",
   "authors": [
     "the TEF components team"
   ],
-  "description": "TEF components - theme-movistar",
+  "description": "TEF components - theme-vivo",
   "main": "index.html",
   "license": "MIT",
   "ignore": [

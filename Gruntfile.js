@@ -8,7 +8,7 @@ module.exports = function(grunt) {
           optimization: 2
         },
         files: {
-          'css/vivo.components.css': 'less/theme.less',
+          'css/components.vivo.css': 'less/theme.less',
           'css/components/buttons.css': 'less/buttons.less',
           'css/components/button-groups.css': 'less/button-groups.less',
           'css/components/dropdowns.css': 'less/dropdowns.less',
@@ -30,9 +30,9 @@ module.exports = function(grunt) {
       default: {
        src: [
           '../icons/icons.css',
-          'css/vivo.components.css',
+          'css/components.vivo.css',
         ],
-        dest: 'css/vivo.components.css'
+        dest: 'css/components.vivo.css'
       }
     },
 
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          'css/vivo.components.min.css': 'css/vivo.components.css',
+          'css/components.vivo.min.css': 'css/components.vivo.css',
           'css/components/buttons.min.css': 'css/components/buttons.css',
           'css/components/button-groups.min.css': 'css/components/button-groups.css',
           'css/components/dropdowns.min.css': 'css/components/dropdowns.css',

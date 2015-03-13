@@ -1,11 +1,11 @@
 {
-  "name": "theme-vivo",
-  "version": "0.2.1",
-  "homepage": "https://github.com/tef-components/theme-vivo",
+  "name": "theme_vivo",
+  "version": "0.2.2",
+  "homepage": "https://github.com/tef-components/theme_vivo",
   "authors": [
     "the TEF components team"
   ],
-  "description": "TEF components - theme-vivo",
+  "description": "TEF components - theme_vivo",
   "main": "index.html",
   "license": "MIT",
   "ignore": [

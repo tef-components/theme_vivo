@@ -1,3 +1,3 @@
-# Theme Movistar
+# Theme Vivo
 
-demo soon
+Demo: [http://tef-components.github.io/theme_vivo/index.html](http://tef-components.github.io/theme_vivo/index.html)

@@ -103,33 +103,38 @@ label {
   border-radius: 4px;
   box-sizing: border-box;
 }
-.tef-ok input {
-  padding: 7px 8px;
-  border: 2px solid #99cc33;
-}
-.tef-ok input.small {
-  padding: 5px 8px;
-}
-.tef-ok input.large {
-  padding: 6px 13px;
-}
-.tef-ok .tef-message {
-  background-color: #99cc33;
-}
+.tef-ok input,
 .tef-warning input,
 .tef-error input {
   padding: 7px 8px;
-  border: 2px solid #b00000;
+  border-width: 2px;
+  border-style: solid;
 }
+.tef-ok input.small,
 .tef-warning input.small,
 .tef-error input.small {
   padding: 5px 8px;
 }
+.tef-ok input.large,
 .tef-warning input.large,
 .tef-error input.large {
   padding: 6px 13px;
 }
-.tef-warning .tef-message,
+.tef-ok input {
+  border-color: #99cc33;
+}
+.tef-ok .tef-message {
+  background-color: #99cc33;
+}
+.tef-warning input {
+  border-color: #f0ad4e;
+}
+.tef-warning .tef-message {
+  background-color: #f0ad4e;
+}
+.tef-error input {
+  border-color: #b00000;
+}
 .tef-error .tef-message {
   background-color: #b00000;
 }

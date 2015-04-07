@@ -2,7 +2,8 @@
   position: relative;
   display: inline-block;
 }
-.tef-tooltip:before {
+.tef-tooltip[data-text]:before,
+.tef-tooltip .tef-tooltip-content {
   display: none;
   position: absolute;
   content: attr(data-text);
@@ -15,6 +16,15 @@
   max-width: 300px;
   text-align: left;
   z-index: 50;
+  white-space: pre;
+  word-break: break-word;
+}
+.tef-tooltip .tef-tooltip-content {
+  content: "";
+  padding: 0 23px;
+}
+.tef-tooltip .tef-tooltip-content > * {
+  margin: -10px 0;
 }
 .tef-tooltip:after {
   display: none;
@@ -23,58 +33,108 @@
   border: 8px solid transparent;
   z-index: 50;
 }
-.tef-tooltip.left:before {
+.tef-tooltip.right[data-text]:before,
+.tef-tooltip.right .tef-tooltip-content {
   top: 50%;
   left: 100%;
   margin: -16px 0 0 8px;
 }
-.tef-tooltip.left:after {
+.tef-tooltip.right[data-text].reverse:before,
+.tef-tooltip.right .reverse .tef-tooltip-content {
+  top: auto;
+  bottom: 50%;
+  margin: 0 0 -16px 8px;
+}
+.tef-tooltip.right:after {
   border-right: 8px solid #31323b;
   top: 50%;
   left: 100%;
   margin: -8px 0 0 -8px;
 }
-.tef-tooltip.left.reverse:before {
-  top: auto;
-  bottom: 50%;
-  margin: 0 0 -16px 8px;
+.tef-tooltip.right.start[data-text]:before,
+.tef-tooltip.right.start .tef-tooltip-content {
+  top: 16px;
 }
-.tef-tooltip.right:before {
+.tef-tooltip.right.start[data-text].reverse:before,
+.tef-tooltip.right.start .reverse .tef-tooltip-content {
+  top: auto;
+  bottom: 100%;
+  margin: 0 0 -32px 8px;
+}
+.tef-tooltip.right.start:after {
+  top: 16px;
+}
+.tef-tooltip.right.end[data-text]:before,
+.tef-tooltip.right.end .tef-tooltip-content {
+  top: 100%;
+  margin: -32px 0 0 8px;
+}
+.tef-tooltip.right.end[data-text].reverse:before,
+.tef-tooltip.right.end .reverse .tef-tooltip-content {
+  top: auto;
+  bottom: 0;
+  margin: 0 0 0 8px;
+}
+.tef-tooltip.right.end:after {
+  top: auto;
+  bottom: 8px;
+}
+.tef-tooltip.left[data-text]:before,
+.tef-tooltip.left .tef-tooltip-content {
   top: 50%;
   right: 100%;
   margin: -16px 8px 0 0;
 }
-.tef-tooltip.right:after {
+.tef-tooltip.left[data-text].reverse:before,
+.tef-tooltip.left .reverse .tef-tooltip-content {
+  top: auto;
+  bottom: 50%;
+  margin: 0 8px -16px 0;
+}
+.tef-tooltip.left:after {
   border-left: 8px solid #31323b;
   top: 50%;
   right: 100%;
   margin: -8px -8px 0 0;
 }
-.tef-tooltip.right.reverse:before {
+.tef-tooltip.left.start[data-text]:before,
+.tef-tooltip.left.start .tef-tooltip-content {
+  top: 16px;
+}
+.tef-tooltip.left.start[data-text].reverse:before,
+.tef-tooltip.left.start .reverse .tef-tooltip-content {
   top: auto;
-  bottom: 50%;
-  margin: 0 8px -16px 0;
+  bottom: 100%;
+  margin: 0 8px -32px 0;
 }
-.tef-tooltip.bottom:before {
+.tef-tooltip.left.start:after {
+  top: 16px;
+}
+.tef-tooltip.left.end[data-text]:before,
+.tef-tooltip.left.end .tef-tooltip-content {
   top: 100%;
-  left: 50%;
-  margin: 8px 0 0 -16px;
+  margin: -32px 8px 0 0;
 }
-.tef-tooltip.bottom:after {
-  border-bottom: 8px solid #31323b;
-  left: 50%;
-  top: 100%;
-  margin: -8px 0 0 -8px;
+.tef-tooltip.left.end[data-text].reverse:before,
+.tef-tooltip.left.end .reverse .tef-tooltip-content {
+  top: auto;
+  bottom: 0;
 }
-.tef-tooltip.bottom.reverse:before {
-  right: 50%;
-  left: auto;
-  margin: 8px -16px 0 0;
+.tef-tooltip.left.end:after {
+  top: auto;
+  bottom: 8px;
 }
-.tef-tooltip.top:before {
+.tef-tooltip.top[data-text]:before,
+.tef-tooltip.top .tef-tooltip-content {
   bottom: 100%;
   left: 50%;
   margin: 0 0 8px -16px;
+}
+.tef-tooltip.top[data-text].reverse:before,
+.tef-tooltip.top .reverse .tef-tooltip-content {
+  right: 50%;
+  left: auto;
+  margin: 0 -16px 8px 0;
 }
 .tef-tooltip.top:after {
   border-top: 8px solid #31323b;
@@ -82,16 +142,90 @@
   bottom: 100%;
   margin: 0 0 -8px -8px;
 }
-.tef-tooltip.top.reverse:before {
+.tef-tooltip.top.start[data-text]:before,
+.tef-tooltip.top.start .tef-tooltip-content {
+  left: 16px;
+}
+.tef-tooltip.top.start[data-text].reverse:before,
+.tef-tooltip.top.start .reverse .tef-tooltip-content {
+  left: auto;
+  right: 100%;
+  margin: 0 -32px 8px 0;
+}
+.tef-tooltip.top.start:after {
+  left: 16px;
+}
+.tef-tooltip.top.end[data-text]:before,
+.tef-tooltip.top.end .tef-tooltip-content {
+  left: 100%;
+  margin: 0 0 8px -32px;
+}
+.tef-tooltip.top.end[data-text].reverse:before,
+.tef-tooltip.top.end .reverse .tef-tooltip-content {
+  left: auto;
+  right: 0;
+}
+.tef-tooltip.top.end:after {
+  left: auto;
+  right: 8px;
+}
+.tef-tooltip.bottom[data-text]:before,
+.tef-tooltip.bottom .tef-tooltip-content {
+  top: 100%;
+  left: 50%;
+  margin: 8px 0 0 -16px;
+}
+.tef-tooltip.bottom[data-text].reverse:before,
+.tef-tooltip.bottom .reverse .tef-tooltip-content {
   right: 50%;
   left: auto;
-  margin: 0 -16px 8px 0;
+  margin: 8px -16px 0 0;
 }
-.tef-tooltip:hover:before,
-.tef-tooltip:focus:before,
-.tef-tooltip.active:before,
+.tef-tooltip.bottom:after {
+  border-bottom: 8px solid #31323b;
+  left: 50%;
+  top: 100%;
+  margin: -8px 0 0 -8px;
+}
+.tef-tooltip.bottom.start[data-text]:before,
+.tef-tooltip.bottom.start .tef-tooltip-content {
+  left: 16px;
+}
+.tef-tooltip.bottom.start[data-text].reverse:before,
+.tef-tooltip.bottom.start .reverse .tef-tooltip-content {
+  left: auto;
+  right: 100%;
+  margin: 8px -32px 0 0;
+}
+.tef-tooltip.bottom.start:after {
+  left: 16px;
+}
+.tef-tooltip.bottom.end[data-text]:before,
+.tef-tooltip.bottom.end .tef-tooltip-content {
+  left: 100%;
+  margin: 8px 0 0 -32px;
+}
+.tef-tooltip.bottom.end[data-text].reverse:before,
+.tef-tooltip.bottom.end .reverse .tef-tooltip-content {
+  left: auto;
+  right: 0;
+}
+.tef-tooltip.bottom.end:after {
+  left: auto;
+  right: 8px;
+}
+.tef-tooltip:hover[data-text]:before,
+.tef-tooltip:focus[data-text]:before,
+.tef-tooltip.active[data-text]:before,
 .tef-tooltip:hover:after,
 .tef-tooltip:focus:after,
-.tef-tooltip.active:after {
+.tef-tooltip.active:after,
+.tef-tooltip:hover .tef-tooltip-content,
+.tef-tooltip:focus .tef-tooltip-content,
+.tef-tooltip.active .tef-tooltip-content {
   display: block;
+}
+.tef-tooltip pre {
+  margin: 0;
+  padding: 0;
 }

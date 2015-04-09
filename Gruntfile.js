@@ -38,7 +38,7 @@ module.exports = function(grunt) {
     concat: {
       default: {
        src: [
-          '../icons/icons.css',
+          '../icons/fonts/icons.css',
           'css/components.vivo.css',
         ],
         dest: 'css/components.vivo.css'

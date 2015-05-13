@@ -204,7 +204,7 @@ var setVars = function(){
   CoreStyle.g.gutter =
     "16px";
 
-  CoreStyle.g.columnGutter =
+  CoreStyle.g.data-columnGutter =
     "8px";
 
 

@@ -99,7 +99,7 @@ module.exports = function(grunt) {
     watch: {
       styles: {
         files: ['../**/*.less'],
-        tasks: ['less','autoprefixer','cssmin'],
+        tasks: ['less','concat','autoprefixer','cssmin'],
         options: {
           nospawn: true
         }
@@ -108,16 +108,19 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', [
+    'copy',
     'less',
     'concat',
+    'autoprefixer',
+    'cssmin',
     'watch'
   ]);
 
   grunt.registerTask('release', [
     'copy',
     'less',
-    'autoprefixer',
     'concat',
+    'autoprefixer',
     'cssmin',
     'exec:add',
     'prompt',
